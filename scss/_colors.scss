@@ -1,0 +1,15 @@
+$white: #ffffff;
+$greyFills: #F2F1F3;
+$greyLines: #E6E4E7;
+$greyText: #A2A0A3;
+$mainText: #1A1A1A;
+$lightPink: #FDEAF1;
+$pink: #EE2A74;
+
+$yellow: #F2C94C;
+$green: #27AE60;
+
+@mixin padding-container () {
+    padding-left: 40px;
+    padding-right: 40px;
+}

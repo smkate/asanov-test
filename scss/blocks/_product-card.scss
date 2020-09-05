@@ -1,0 +1,106 @@
+.main {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 80px;
+}
+.products {
+    // @include padding-container ();
+    display: flex;
+}
+.btns {
+    padding-bottom: 13px;
+    text-align: right;
+}
+.icon-prev,
+.icon-next {
+    height: 10px;
+    width: 10px;
+}
+.icon-prev {
+    transform: rotate(180deg);
+    fill: $greyLines;
+}
+.prev,
+.next {
+    width: 32px;
+    height: 32px;
+    border: 1px solid $mainText;
+    border-radius: 50%;
+    background-color: $white;
+}
+.prev {
+    border: 1px solid $greyLines;
+}
+.product-characteristics {
+    display: none;
+    transition: all 0.3s ease-in;
+}
+.product-card {
+    position: relative;
+    border: 1px solid $greyLines;
+    border-radius: 8px;
+    padding: 8px;
+    margin-right: 10px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    &:hover {
+        cursor: pointer;
+        border: 1px solid $pink;
+        box-shadow: 0px 0px 32px rgba(0, 0, 0, 0.12);
+    }
+
+    // &:hover .product-characteristics {
+    //     display: block;
+    // }
+}
+.btn-buy {
+    border: 1px solid $pink;
+    border-radius: 8px;
+    background-color: transparent;
+    padding: 12px 16px;
+    @include caption ();
+    color: $pink;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.product-buy {
+    display: flex;
+    justify-content: space-between;
+}
+.product-price,
+.characteristics {
+    display: flex;
+    flex-direction: column;    
+}
+.characteristic-title {
+    @include caption ();
+    color: $greyText;
+}
+.characteristic-detail {
+    @include caption ();
+}
+.label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 8px 8px 8px 0px;
+    padding: 10px 8px;
+    @include caption ();
+    font-weight: bold;
+    line-height: 16px;
+
+    &.best-price {
+        background-color: $yellow;
+    }
+
+    &.gift {
+        background-color: $green;
+    }
+
+    &.the-best-price {
+        background-color: $pink;
+    }
+}

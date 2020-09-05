@@ -1,0 +1,15 @@
+.container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+}
+.wrap {
+    display: flex;
+}
+.icon {
+    height: 24px;
+    width: 24px;
+}
+@mixin vertCentr() {
+    display: flex;
+    align-items: center;
+}

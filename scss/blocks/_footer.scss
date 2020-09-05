@@ -1,0 +1,29 @@
+.footer {
+    @include padding-container ();
+    padding-top: 20px;
+    border-top: 1px solid $greyFills;
+}
+.shops {
+    padding-bottom: 32px;
+}
+.footer .nav-link {
+    color: $greyText;
+}
+.footer-share {
+    display: flex;
+    padding-top: 32px;
+    padding-bottom: 75px;
+}
+.socials,
+.payment {
+    padding-right: 0;
+    padding-left: 0;
+}
+.policy,
+.copyright {
+    padding-bottom: 16px;
+}
+.copyright {
+    display: flex;
+    justify-content: space-between;
+}
