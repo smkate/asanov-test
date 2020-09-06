@@ -5,10 +5,6 @@
 .wrap {
     display: flex;
 }
-.icon {
-    height: 24px;
-    width: 24px;
-}
 @mixin vertCentr() {
     display: flex;
     align-items: center;

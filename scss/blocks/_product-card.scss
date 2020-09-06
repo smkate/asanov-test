@@ -1,39 +1,131 @@
 .main {
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 40px;
+    padding-right: 40px;
     padding-bottom: 80px;
 }
 .products {
-    // @include padding-container ();
     display: flex;
+    flex-wrap: wrap;
 }
 .btns {
     padding-bottom: 13px;
     text-align: right;
 }
-.icon-prev,
-.icon-next {
-    height: 10px;
-    width: 10px;
-}
-.icon-prev {
-    transform: rotate(180deg);
-    fill: $greyLines;
-}
 .prev,
 .next {
+    position: relative;
     width: 32px;
     height: 32px;
     border: 1px solid $mainText;
     border-radius: 50%;
     background-color: $white;
+    transition: all 0.3s ease-in;
+}
+.next:hover {
+    cursor: pointer;
+    border: 1px solid $pink;
+    
+    .icon-next {
+        fill: $pink;
+    }
 }
 .prev {
     border: 1px solid $greyLines;
+
+    &:hover {
+        cursor: pointer;
+        background: $greyFills;
+    }
+}
+.icon-prev,
+.icon-next {
+    height: 32px;
+    width: 32px;
+    transition: all 0.3s ease-in;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.icon-prev {
+    transform: rotate(90deg);
+}
+.icon-next {
+    transform: rotate(-90deg);
 }
 .product-characteristics {
     display: none;
     transition: all 0.3s ease-in;
+}
+.product-title {
+    padding-bottom: 24px;
+    @include subtitle-2();
+    font-weight: normal;
+}
+.btn__add {
+    display: none;
+}
+.btn-buy {
+    border: 1px solid $pink;
+    border-radius: 8px;
+    background-color: transparent;
+    padding: 12px 16px;
+    @include caption ();
+    color: $pink;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.3s ease-in;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &.active .btn__add {
+        @include vertCentr();
+    }
+
+    &.active .btn__buy {
+        display: none;
+    }
+
+    .add {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .btn__buy {
+        display: none;
+    }
+}
+.btn-buy__mobile {
+    display: none;
+
+    @media screen and (max-width: 768px) {
+        display: flex;
+    }
+}
+.add-counter {
+    padding: 0 3px;
+    color: $pink;
+}
+.plus,
+.minus {
+    display: inline-block;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    color: $mainText;
+
+    &:hover {
+        background: $lightPink;
+        color: $pink;
+    }
+}
+.add-symbol {
+    position: absolute;
+    top: 13%;
+    left: 39%;
 }
 .product-card {
     position: relative;
@@ -41,6 +133,7 @@
     border-radius: 8px;
     padding: 8px;
     margin-right: 10px;
+    flex: 1 0 0%;
 
     &:last-child {
         margin-right: 0;
@@ -52,19 +145,41 @@
         box-shadow: 0px 0px 32px rgba(0, 0, 0, 0.12);
     }
 
+    &:hover .btn-buy {
+        background-color: $pink;
+        color: $white;
+    }
+
+    &:hover .btn-buy.active {
+        background-color: $white;
+        color: $mainText;
+        
+        .add-counter {
+            color: $pink;
+        }
+        
+    }
+
     // &:hover .product-characteristics {
     //     display: block;
     // }
 }
-.btn-buy {
-    border: 1px solid $pink;
-    border-radius: 8px;
-    background-color: transparent;
-    padding: 12px 16px;
-    @include caption ();
-    color: $pink;
-    text-transform: uppercase;
+.old-price {
+    @include small-text ();
+    color: $greyText;
+    text-decoration: line-through;
+}
+.new-price {
     font-weight: bold;
+    font-size: 22px;
+    line-height: 24px;
+}
+.product-availability {
+    @include vertCentr();
+}
+.product-availability__text {
+    @include caption ();
+    padding-left: 4px;
 }
 .product-buy {
     display: flex;
@@ -91,6 +206,7 @@
     @include caption ();
     font-weight: bold;
     line-height: 16px;
+    @include vertCentr();
 
     &.best-price {
         background-color: $yellow;
@@ -98,9 +214,20 @@
 
     &.gift {
         background-color: $green;
+        color: $white;
     }
 
     &.the-best-price {
         background-color: $pink;
+        color: $white;
     }
+
+    span {
+        padding-left: 4px;
+    }
+}
+
+.label-icon {
+    height: 16px;
+    width: 16px;
 }

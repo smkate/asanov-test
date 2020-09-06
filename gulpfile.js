@@ -5,6 +5,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const sourcemaps = require('gulp-sourcemaps');
 const browserSync = require('browser-sync').create();
 const svgSprite = require('gulp-svg-sprite');
+// const svgColorSprite = require('gulp-svg-sprite');
 const svgmin = require('gulp-svgmin');
 const cheerio = require('gulp-cheerio');
 const replace = require('gulp-replace');
@@ -82,7 +83,9 @@ const spriteSVG = () => {
         }
       }))
       .pipe(gulp.dest('img'));
-};  
+};
+
+
 
 
 exports.default  = gulp.parallel(watchFiles ,sync, spriteSVG);
