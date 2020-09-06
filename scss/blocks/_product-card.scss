@@ -79,11 +79,11 @@
         cursor: pointer;
     }
 
-    &.active .btn__add {
+    &.toggle .btn__add {
         @include vertCentr();
     }
 
-    &.active .btn__buy {
+    &.toggle .btn__buy {
         display: none;
     }
 
@@ -127,13 +127,27 @@
     top: 13%;
     left: 39%;
 }
+.products {
+    overflow: hidden;
+    flex-wrap: nowrap;
+    height: 450px;
+    position: relative;
+}
+.products-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    transition: margin-left 250ms;
+}
 .product-card {
     position: relative;
     border: 1px solid $greyLines;
     border-radius: 8px;
     padding: 8px;
     margin-right: 10px;
-    flex: 1 0 0%;
+    width: 24.1%;
+    height: 100%;
 
     &:last-child {
         margin-right: 0;
@@ -150,7 +164,7 @@
         color: $white;
     }
 
-    &:hover .btn-buy.active {
+    &:hover .btn-buy.toggle {
         background-color: $white;
         color: $mainText;
         
@@ -160,9 +174,9 @@
         
     }
 
-    // &:hover .product-characteristics {
-    //     display: block;
-    // }
+    &.active .product-characteristics {
+        display: block;
+    }
 }
 .old-price {
     @include small-text ();
