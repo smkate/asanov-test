@@ -1,57 +1,74 @@
 // "use strict";
-const equalHeight = document.querySelectorAll('.product-title');
-const burger = document.querySelector('.burger-menu');
-const productCards = document.querySelectorAll('.product-card');
-const btnsBuy = document.querySelectorAll('.btn-buy');
-const footerTitle = document.querySelectorAll('.footer__title');
+// const equalHeight = document.querySelectorAll('.product-title');
 const prev = document.querySelector('.prev'),
       next = document.querySelector('.next'),
-      slides = document.querySelectorAll('.product-card');
-
-console.log(slides);
-
-
-    // for(let elem of equalHeight) {
-    //    const max = Math.max(max, (elem[i]).offsetHeight);
-    //    console.log(max);
-    // }
-    // equalHeight.offsetHeight = 'height', max+'px';
-// }
-
-let index = 0,
-    sliderBox = document.querySelector('.products-box'),
-    width = 240, // ширина картинки
-    count = 1, // видимое количество изображений
-    position = 0; // положение ленты прокрутки
-
-// 
+      slides = document.querySelectorAll('.product-card'),
+      burger = document.querySelector('.burger-menu'),
+      productCards = document.querySelectorAll('.product-card'),
+      btnsBuy = document.querySelectorAll('.btn-buy'),
+      nav = document.querySelector('.navbar'),
+      footerTitleBox = document.querySelectorAll('.footer-col'),
+      navLinks = document.querySelectorAll('.nav-item');
 
 
-const nextSlide = () => {
-    if (index < slides.length) {
-      // сдвиг вправо
-      position -= width * count;
-      // последнее передвижение вправо может быть не на 3, а на 2 или 1 элемент
-      position = Math.max(position, -width * (slides.length - count));
-      sliderBox.style.marginLeft = position + 'px';
-      index++;
+// OPEN Navbar menu
+if (window.screen.width <= 992) {
+    const navSlide = () => {
+        // Toggle Nav
+        burger.addEventListener ('click' , (event) => {       
+            nav.classList.toggle('active');
+    
+            // Burger Animation
+            burger.classList.toggle('toggle');
+        });
     }
-  };
-  
-  const prevSlide = () =>  {
-    if (index > 0) {
-        // сдвиг влево
-        position += width * count;
-        // последнее передвижение влево может быть не на 3, а на 2 или 1 элемент
-        position = Math.min(position, 425)
-        sliderBox.style.marginLeft = position + 'px';
-        index--;
-    }
-  };
-  
-  
-  next.addEventListener('click', nextSlide);
-  prev.addEventListener('click', prevSlide);
+    navSlide();
+    
+    for (let navLink of navLinks) {
+        navLink.addEventListener('click', () => {
+            navLink.classList.toggle('active');
+        });
+    };
+}
+
+
+// swipe slides
+if (window.screen.width <= 992) {
+    // console.log("mobile");
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 2,
+        spaceBetween: 10,
+        slidesPerGroup: 2,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+}
+else {
+    // console.log("desktop");
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 3,
+        spaceBetween: 10,
+        slidesPerGroup: 3,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+}
 
 
   for (let card of productCards) {
@@ -66,5 +83,11 @@ const nextSlide = () => {
 for (let btn of btnsBuy) {
     btn.addEventListener('click', () => {
         btn.classList.toggle('toggle');
+    });
+};
+
+for (let title of footerTitleBox) {
+    title.addEventListener('click', () => {
+        title.classList.toggle('active');
     });
 };

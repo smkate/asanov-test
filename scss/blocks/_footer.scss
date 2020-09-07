@@ -11,6 +11,7 @@
     @include vertCentr();
     color: $mainText;
     transition: all 0.3s ease-in;
+    padding: 0;
 
     &:hover {
         color: $pink;
@@ -66,12 +67,16 @@
         color: $pink;
     }
 }
+.footer__shops {
+    margin: 0;
+}
 .shops-tel {
     display: none;
     color: $mainText;
     justify-content: flex-end;
+    padding: 0;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 992px) {
         @include vertCentr();
     }
 
@@ -111,6 +116,22 @@
     padding-left: 0;
     margin-bottom: 0;
     list-style: none;
+
+    @media screen and (max-width: 992px) {
+        display: none;
+    }
+}
+@media screen and (max-width: 992px) {
+    .footer-col.active .footer__navbar-nav {
+        display: flex;
+        padding-bottom: 16px;
+    }
+}
+.col-sm-5 {
+    width: 40%;
+}
+.col-sm-7 {
+    width: 60%;
 }
 .footer__nav-link {
     @include vertCentr();
@@ -135,10 +156,13 @@
         padding: 8px 0;
     }
 }
+.footer__title {
+    position: relative;
+}
 .footer__title-icon {
     display: none;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
     .footer__title-icon {
         display: inline-block;
         position: absolute;
@@ -149,14 +173,9 @@
         width: 24px;
     }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
     .footer__title {
         border-bottom: 1px solid $greyLines;
-    }
-}
-@media screen and (max-width: 768px) {
-    .footer__navbar-nav {
-        display: none;
     }
 }
 .footer__nav-item {
@@ -214,7 +233,7 @@
     padding-left: 0;
     padding-right: 0;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
     .copyright-logo {
         justify-content: flex-start;
     }

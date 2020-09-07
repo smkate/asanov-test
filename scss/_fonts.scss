@@ -6,7 +6,7 @@ body {
     line-height: 24px;
     color: $mainText;
 }
-h1 {
+@mixin h1() {
     font-style: normal;
     font-weight: bold;
     font-size: 36px;
@@ -18,19 +18,19 @@ h1 {
     font-size: 24px;
     line-height: 32px;
 }
-h3 {
+@mixin h3() {
     font-style: normal;
     font-weight: bold;
     font-size: 20px;
     line-height: 24px;
 }
-.subtitle-1 {
+@mixin subtitle-1() {
     font-style: normal;
     font-weight: bold;
     font-size: 16px;
     line-height: 24px;
 }
-.subtitle-1 .alt {
+@mixin subtitle-1-alt() {
     font-style: normal;
     font-weight: bold;
     font-size: 16px;
@@ -42,19 +42,19 @@ h3 {
     font-size: 14px;
     line-height: 24px;
 }
-.subtitle-2 .alt {
+@mixin subtitle-2-alt() {
     font-style: normal;
     font-weight: bold;
     font-size: 14px;
     line-height: 18px;
 }
-@mixin caption () {
+@mixin caption() {
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
     line-height: 16px;
 }
-@mixin small-text () {
+@mixin small-text() {
     font-style: normal;
     font-weight: normal;
     font-size: 12px;

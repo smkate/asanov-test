@@ -11,6 +11,10 @@
 .header-contact {
     display: flex;
     padding: 12px 40px;
+
+    @media screen and (max-width: 992px) {
+        padding: 12px 16px;
+    }
 }
 .shops,
 .shops span {
@@ -69,7 +73,11 @@
 
     @media screen and (max-width: 992px) {
         @include vertCentr();
+        width: 50%;
     }
+}
+.logo__icon-text {
+    width: 100%;
 }
 .burger-menu span {
     -webkit-transition: all 0.3s ease-in;
@@ -94,16 +102,16 @@
     transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
 }
 .toggle .line-1 {
-    background-color: #fff;
-    -webkit-transform: rotate(-45deg) translate(-5px,6px);
-        -ms-transform: rotate(-45deg) translate(-5px,6px);
-            transform: rotate(-45deg) translate(-5px,6px);
+    background-color: $mainText;
+    -webkit-transform: rotate(-45deg) translate(-3px,1px);
+        -ms-transform: rotate(-45deg) translate(-3px,1px);
+            transform: rotate(-45deg) translate(-3px,1px);
 }
 .toggle .line-2 {
     opacity: 0;
 }
 .toggle .line-3 {
-    background-color: #fff;
+    background-color: $mainText;
     -webkit-transform: rotate(45deg) translate(-5px,-6px);
         -ms-transform: rotate(45deg) translate(-5px,-6px);
             transform: rotate(45deg) translate(-5px,-6px);
@@ -112,11 +120,12 @@
     display: none;
     width: 24px;
     height: 24px;
-    padding-right: 0;
+    padding-right: 16px;
 
     @media screen and (max-width: 992px) {
         display: flex;
         justify-content: flex-end;
+        width: 50%;
     }
 }
 @media screen and (max-width: 992px) {
@@ -146,6 +155,11 @@
 .header-search {
     justify-content: space-between;
     padding: 16px 40px;
+
+    @media screen and (max-width: 992px) {
+        padding: 16px 16px;
+    }
+    
 }
 .form-inline .input-group {
     width: 100%;
@@ -178,11 +192,15 @@
 }
 .header-search__shops {
     display: none;
+    padding-bottom: 18px;
 }
 @media screen and (max-width: 992px) {
     .header-search__shops {
         @include vertCentr();
     }
+}
+.city-search-text {
+    @include vertCentr();
 }
 .account {
     @include vertCentr();
@@ -208,8 +226,12 @@
 .counter-text {
     position: absolute;
     top: -25%;
-    left: -25%;
+    left: -30%;
     color: $white;
+}
+.counter-text.mobile {
+    top: -25%;
+    left: 15%;
 }
 .account__cart {
     display: flex;
@@ -270,6 +292,17 @@
         height: auto;
     }
 }
+@media screen and (max-width: 992px) {
+    .navbar.active {
+        display: flex;
+    }
+}
+.nav-item.active .submenu-list {
+    display: block;
+}
+.nav-item .submenu-list {
+    display: none;
+}
 .submenu-list {
     display: none;
     position: absolute;
@@ -282,6 +315,12 @@
     box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.06);
     border-radius: 0px;
     height: 100%;
+
+    @media screen and (max-width: 992px) {
+        left: 0;
+        top: 15%;
+        z-index: 5;
+    }
 }
 .navbar-submenu {
     display: flex;
@@ -296,8 +335,13 @@
     transition: all 0.1s ease-in;
 
     @media screen and (max-width: 992px) {
-        padding-left: 40px;
-        padding-right: 40px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+@media screen and (min-width: 992px) {
+    .nav-item:hover .submenu-list {
+        display: block;
     }
 }
 .submenu-link {
@@ -315,9 +359,10 @@
     padding-bottom: 24px;
     padding-left: 16px;
     padding-right: 16px;
-}
-.nav-item:hover .submenu-list {
-    display: block;
+
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
 }
 .navbar-list {
     width: 100%;
@@ -344,8 +389,8 @@
     }
 
     @media screen and (max-width: 992px) {
-        padding-left: 40px;
-        padding-right: 40px;
+        padding-left: 16px;
+        padding-right: 16px;
     }
 }
 .nav-footer {
@@ -361,7 +406,7 @@
         padding-left: 10px;
     }
 }
-.icon-nav {
+.nav-item .icon-nav {
     position: absolute;
     top: 25%;
     right: 0;
@@ -369,10 +414,59 @@
     height: 24px;
     width: 24px;
 }
+.nav-item.active .icon-nav {
+    position: absolute;
+    top: 25%;
+    left: 0;
+    transform: rotate(90deg);
+    height: 24px;
+    width: 24px;
+}
+.nav-item.active .nav-link {
+    padding-left: 24px;
+}
 .product-list__title {
     display: flex;
 }
 .icon-promo {
     height: 28px;
     width: 28px;
+}
+.service-list-mobile {
+    display: none;
+    flex-direction: column;
+    padding: 24px 16px 50px 16px;
+    background-color: $white;
+
+    @media screen and (max-width: 992px) {
+        display: flex;
+    }
+
+}
+.btn-service-mobile  {
+    width: 100%;
+    background: $greyFills;
+    border-radius: 8px;
+    padding: 12px;
+    @include vertCentr();
+    margin-bottom: 8px;
+    border: none;
+}
+.btn-service-mobile span {
+    padding-left: 12px;
+}
+.btn-service-mobile-more {
+    width: 100%;
+    background: transparent;
+    border-radius: 8px;
+    padding: 12px;
+    @include vertCentr();
+    margin-bottom: 8px;
+    border: 1px solid $greyFills;
+    border-radius: 8px;
+    justify-content: center;
+
+    span {
+        @include vertCentr();
+    }
 }

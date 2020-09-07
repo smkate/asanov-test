@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/style.min.css">
     <title>Document</title>
 </head>
@@ -268,8 +269,8 @@
                             <svg class="icon">
                                 <use xlink:href="img/symbol/sprite.svg#shoppingCart"></use>
                             </svg>
-                            <span class="cart-counter">
-                                <span class="counter-text">10</span>
+                            <span class="cart-counter mobile">
+                                <span class="counter-text mobile">10</span>
                             </span>
                         </a>
                     </div>
@@ -279,7 +280,7 @@
                 <div class="row">
                     <div class="header-search__shops col-lg-6 col-md-12">
                         <a class="shops__city" href="#">
-                            <span>Санкт-Петербург
+                            <span class="city-search-text">Санкт-Петербург
                                 <svg class="icon">
                                     <use xlink:href="img/symbol/sprite.svg#arrowDown"></use>
                                 </svg>
@@ -323,35 +324,99 @@
                     </div>
                 </div>
             </div>
+            <!-- end of search-form -->
+            <div class="service-list-mobile">
+                <a class="service-link" href="#">
+                    <button class="btn-service-mobile">
+                        <svg class="icon">
+                            <use xlink:href="img/svg/black-icons/blackIcons.svg#sofa"></use>
+                        </svg>
+                        <span>Диваны и кресла</span>
+                    </button>
+                </a>
+                <a class="service-link" href="#">
+                    <button class="btn-service-mobile">
+                        <svg class="icon">
+                            <use xlink:href="img/svg/black-icons/blackIcons.svg#closet"></use>
+                        </svg>
+                        <span>Шкафы</span>
+                    </button>
+                </a>
+                <a class="service-link" href="#">
+                    <button class="btn-service-mobile">
+                        <svg class="icon">
+                            <use xlink:href="img/svg/black-icons/blackIcons.svg#kitchen"></use>
+                        </svg>
+                        <span>Мебель для кухни</span>
+                    </button>
+                </a>
+                <a class="service-link" href="#">
+                    <button class="btn-service-mobile">
+                        <svg class="icon">
+                            <use xlink:href="img/svg/black-icons/blackIcons.svg#room"></use>
+                        </svg>
+                        <span>Гостинные</span>
+                    </button>
+                </a>
+                <a class="service-link" href="#">
+                    <button class="btn-service-mobile">
+                        <svg class="icon">
+                            <use xlink:href="img/svg/black-icons/blackIcons.svg#bedroom"></use>
+                        </svg>
+                        <span>Спальни</span>
+                    </button>
+                </a>
+                <a class="service-link" href="#">
+                    <button class="btn-service-mobile">
+                        <svg class="icon">
+                            <use xlink:href="img/svg/black-icons/blackIcons.svg#hall"></use>
+                        </svg>
+                        <span>Мебель для прихожей</span>
+                    </button>
+                </a>
+                <a class="service-link-more" href="#">
+                    <button class="btn-service-mobile-more">
+                        <span>
+                            Загрузить ещё
+                            <svg class="icon">
+                                <use xlink:href="img/symbol/sprite.svg#arrowDown"></use>
+                            </svg>
+                        </span>
+                    </button>
+                </a>
+            </div>
+            <!-- end of  service-mobile -->
             <main class="main">
                 <section class="product-list">
                     <div class="product-list__title">
                         <svg class="icon-promo">
                             <use xlink:href="img/svg/color-icons/colorIcons.svg#promo"></use>
                         </svg>
-                        <h2>Лучшие предложения месяца</h2>
+                        <h2 class="promo-title">Лучшие предложения месяца</h2>
+                        <h2 class="promo-title-mobile">Мы рекомендуем</h2>
                     </div>
                     <div class="product-carousel">
-                        <div class="btns">
-                            <button class="prev">
+                        <!-- swiper-pagination -->
+                        <div class="btns swiper-pagination">
+                            <button class="prev swiper-button-prev">
                                 <svg class="icon-prev">
                                     <use xlink:href="img/symbol/sprite.svg#arrowDown"></use>
                                 </svg>
                             </button>
-                            <button class="next">
+                            <button class="next swiper-button-next">
                                 <svg class="icon-next">
                                     <use xlink:href="img/symbol/sprite.svg#arrowDown"></use>
                                 </svg>
                             </button>
                         </div>
-                        <div class="products">
-                            <div class="products-box">
-                                <div class="product-card">
+                        <div class="products swiper-container">
+                            <div class="products-box swiper-wrapper">
+                                <div class="product-card swiper-slide">
                                     <div class="label best-price">
                                         <svg class="label-icon">
                                             <use xlink:href="img/svg/color-icons/colorIcons.svg#labelPriceDark"></use>
                                         </svg>
-                                        <span>Лучшая цена</span>
+                                        <span class="label-title">Лучшая цена</span>
                                     </div>
                                     <img src="img/product-1.jpg" alt="">
                                     <h4 class="product-title">
@@ -402,12 +467,12 @@
                                     </div>
                                 </div>
                                 <!-- second cart -->
-                                <div class="product-card">
+                                <div class="product-card swiper-slide">
                                     <div class="label gift">
                                         <svg class="label-icon">
                                             <use xlink:href="img/svg/color-icons/colorIcons.svg#promoPrice"></use>
                                         </svg>
-                                        <span>Кресло в подарок</span>
+                                        <span class="label-title">Кресло в подарок</span>
                                     </div>
                                     <img src="img/product-2.jpg" alt="">
                                     <h4 class="product-title">
@@ -458,7 +523,7 @@
                                     </div>
                                 </div>
                                 <!-- 3d cart -->
-                                <div class="product-card">
+                                <div class="product-card swiper-slide">
                                     <img src="img/product-3.jpg" alt="">
                                     <h4 class="product-title">
                                         Диван "КАМЕЛИЯ"
@@ -508,12 +573,12 @@
                                     </div>
                                 </div>
                                 <!-- 4th card -->
-                                <div class="product-card">
+                                <div class="product-card swiper-slide">
                                     <div class="label the-best-price">
                                         <svg class="label-icon">
                                             <use xlink:href="img/svg/color-icons/colorIcons.svg#labelPriceLight"></use>
                                         </svg>
-                                        <span>Лучшая цена</span>
+                                        <span class="label-title">Лучшая цена</span>
                                     </div>
                                     <img src="img/product-4.jpg" alt="">
                                     <h4 class="product-title">
@@ -564,7 +629,7 @@
                                     </div>
                                 </div>
                                 <!-- end 4th card -->
-                                <div class="product-card">
+                                <div class="product-card swiper-slide">
                                     <div class="label best-price">
                                         <svg class="label-icon">
                                             <use xlink:href="img/svg/color-icons/colorIcons.svg#labelPriceDark"></use>
@@ -627,13 +692,13 @@
             </main>
             <footer class="footer">
                 <div class="footer__shops row">
-                    <a class="shops-adress col-lg-6 col-md-6" href="#">
+                    <a class="shops-adress col-lg-6 col-md-6 col-sm-5" href="#">
                         <svg class="icon">
                             <use xlink:href="img/symbol/sprite.svg#pin"></use>
                         </svg>
                         <span>Магазины</span>
                     </a>
-                    <a class="shops-tel col-lg-6 col-md-6" href="#">
+                    <a class="shops-tel col-lg-6 col-md-6 col-sm-7" href="#">
                         <svg class="icon">
                             <use xlink:href="img/symbol/sprite.svg#phone"></use>
                         </svg>
@@ -641,7 +706,7 @@
                     </a>
                 </div>
                 <div class="footer-menu row">
-                    <div class="footer-menu__info col-lg-3 col-md-12">
+                    <div class="footer-menu__info footer-col col-lg-3 col-md-12">
                         <div class="footer__title">
                             <span>Как мы работаем?</span>
                             <svg class="footer__title-icon">
@@ -676,7 +741,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="footer-menu__more-info col-lg-3 col-md-12"> 
+                    <div class="footer-menu__more-info footer-col col-lg-3 col-md-12"> 
                         <div class="footer__title">
                             <span>Другая информация</span>
                             <svg class="footer__title-icon">
@@ -711,7 +776,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="footer-menu__partnership col-lg-3 col-md-12">
+                    <div class="footer-menu__partnership footer-col col-lg-3 col-md-12">
                         <div class="footer__title">
                             <span>Сотрудничество</span>
                             <svg class="footer__title-icon">
@@ -741,7 +806,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="footer-menu___reviews col-lg-2 col-md-12">
+                    <div class="footer-menu___reviews footer-col col-lg-2 col-md-12">
                         <div class="footer__title">
                             <span>Отзывы о нас</span>
                             <svg class="footer__title-icon">
@@ -881,6 +946,8 @@
         </div>
     </div>
 
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="main.js"></script>
             
             
