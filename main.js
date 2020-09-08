@@ -54,9 +54,9 @@ if (window.screen.width <= 992) {
 else {
     // console.log("desktop");
     var swiper = new Swiper('.swiper-container', {
-        slidesPerView: 3,
+        slidesPerView: 4,
         spaceBetween: 10,
-        slidesPerGroup: 3,
+        slidesPerGroup: 4,
         loop: true,
         loopFillGroupWithBlank: true,
         pagination: {
